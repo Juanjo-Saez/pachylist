@@ -6,8 +6,10 @@ function capitalize(text) {
 }
 
 function ItemList({ list }) {
-  const itemToHtml = item => <Item item={item} />
+  const itemToHtml = item => <Item item={item} key={item.name} />
   const htmlList = list.map(itemToHtml)
+
+  if(list.length === 0) return null
 
   return (
     <Card>
