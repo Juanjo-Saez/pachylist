@@ -4,7 +4,6 @@ import ItemList from './components/ItemList';
 import AddItem from './components/AddItem';
 import './App.css';
 
-
 function App() {
   const [list, setList] = useState([])
 
