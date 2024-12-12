@@ -12,9 +12,8 @@ function AddItem({ list, setList }) {
       const nameEl = document.querySelector('#addItemNameInput')
       const priceEl = document.querySelector('#addItemPriceInput')
       const name = nameEl.value
-      const price = priceEl.value
+      const price = priceEl.value.replace(",",".");
       const badParams = !name || !price || isNaN(price)
-  
 
       if (badParams) return;
   
