@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from "react-router";
+import 'bulma/css/bulma.css';
+import WarehousePage from './WarehousePage';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/templist" element={<App />} />
+        <Route path="/" element={<WarehousePage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -1,15 +1,15 @@
-import { useState } from 'react'
 import logo from './logo.png';
 import ItemList from './components/ItemList';
 import AddItem from './components/AddItem';
 import './App.css';
+import { useLocalStorage } from '@uidotdev/usehooks';
 
 function App() {
-  const [list, setList] = useState([])
+  const [shoppingList, setShoppingList] = useLocalStorage("shoppingList", [])
 
   let total = 0;
 
-  list.forEach(element => {
+  shoppingList.forEach(element => {
     total += parseFloat(element.price) 
   });
 
@@ -19,9 +19,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Total total={total} />
         <hr />
-        <AddItem list={list} setList={setList} />
+        <AddItem list={shoppingList} setList={setShoppingList} />
         <hr />
-        <ItemList list={list} />
+        <ItemList list={shoppingList} />
       </header>
     </div>
   );
