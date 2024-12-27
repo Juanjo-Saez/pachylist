@@ -1,18 +1,14 @@
 # PachyList
 
-Ya os contaré, una lista sencilla pero con mucha cabeza.
+Una lista sencilla pero con mucha cabeza. Diseñada para poder crearte tus propias listas, las cuales guardan un histórico de ítems con sus precios.
 
+Consta de dos pantallas:
 
-- `npm run build` genera la version de produccion en la carpeta /build solo en create react app, en Vite otro mundo.
-- `npm run start` inicia el proyecto
+* Lista de la compra, una lista temporal de los productos que necesitamos comprar
+* Almacen, una lista con el histórico de todos los items que alguna vez se han añadido junto a su precio
 
-- https://vite.dev/guide/#scaffolding-your-first-vite-project
-- Para crear la app en Vite (cliente, no servidor) con nmp:
-npm create vite@latest
+## Development
 
-entonces
+* `npm run build` genera la version de produccion en la carpeta /build solo en create react app, en Vite otro mundo.
+* `npm run start` inicia el proyecto
 
-# npm 7+, extra double-dash is needed:
-npm create vite@latest my-vue-app -- --template vue
-
-En un futuro, mirar de sustituir `document.querySelector` y `document.getElemntById` por (react refs)[https://react.dev/learn/referencing-values-with-refs]
