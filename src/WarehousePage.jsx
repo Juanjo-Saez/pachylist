@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from './logo.png'
 import { useLocalStorage } from "@uidotdev/usehooks"
 
-function WarehousePage(){
-
+function WarehousePage() {
     const [warehouse, setWarehouse] = useLocalStorage("warehouse", [])
+    const [filteredList, setFilteredList] = useState(warehouse)
 
     function printWarehouseItem(item) {
       const prettyPrice = (item.price === 0) ? "?" : item.price  + " €" 
@@ -25,18 +25,31 @@ function WarehousePage(){
           el.classList.add("is-danger")
           return
         }
-
         setWarehouse([...warehouse, item])
-
     }
 
-    function handleKey(e){
+    function handleKeyDown(e) {
       if(e.key === 'Enter' || e.keyCode === 13){
         addItemtoWarehouse()
         return
       }
       const el = document.querySelector('#addItemInput')
       el.classList.remove("is-danger")
+    }
+
+    function handleKeyUp(e) {
+      const el = document.querySelector('#addItemInput')
+
+      if(el.value === "") {
+        setFilteredList(warehouse)
+        return 
+      }
+      
+      const warehousefiltered = warehouse.filter(item => {
+        const search = el.value
+        return item.name.includes(search) ? item : undefined 
+      })
+      setFilteredList(warehousefiltered)
     }
 
     return (
@@ -53,19 +66,19 @@ function WarehousePage(){
                 className="input is-warning"
                 type="text"
                 placeholder="Item"
-                onKeyDown={handleKey}
-                />
+                onKeyDown={handleKeyDown}
+                onKeyUp={handleKeyUp}
+            />
           </div>
 
           <div className="column">
-            
             <button className="button"  onClick={ addItemtoWarehouse }>+</button>
           </div>
         </div>
       </section>
       <section className="section has-background-black-ter">
         <div className="grid">
-          {warehouse.map(printWarehouseItem)}
+          {filteredList.map(printWarehouseItem)}
         </div>
       </section>
       </>
