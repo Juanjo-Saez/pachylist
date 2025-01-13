@@ -1,6 +1,6 @@
 # PachyList
 
-Una lista sencilla pero con mucha cabeza. Diseñada para poder crearte tus propias listas, las cuales guardan un histórico de ítems con sus precios.
+Un shopping companion sencillo pero con mucha cabeza. Diseñada para poder crearte tus propias listas, las cuales guardan un histórico de ítems con sus precios.
 
 Consta de dos pantallas:
 

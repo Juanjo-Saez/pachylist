@@ -31,10 +31,11 @@ function WarehousePage() {
     function handleKeyDown(e) {
       if(e.key === 'Enter' || e.keyCode === 13){
         addItemtoWarehouse()
-        return
-      }
+      }else{
       const el = document.querySelector('#addItemInput')
       el.classList.remove("is-danger")
+      
+      }
     }
 
     function handleKeyUp(e) {

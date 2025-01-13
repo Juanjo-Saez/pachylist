@@ -26,3 +26,11 @@ ponerle nombre al commit message y cerrar el commit:editMSG para que se ejecute
 
 `git push`
 Lo sube todo.
+
+
+## TO DO LIST
+
+- Que la search bar autocomplete si ya existe un item
+- Mejorar estilos de Warehouse
+- Mejorar estilos de Lista
+- 

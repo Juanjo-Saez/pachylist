@@ -1,4 +1,4 @@
-import logo from './logo.png';
+import logo from './logo.png'
 import ItemList from './components/ItemList';
 import AddItem from './components/AddItem';
 import './App.css';
@@ -14,16 +14,17 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Total total={total} />
-        <hr />
-        <AddItem list={shoppingList} setList={setShoppingList} />
-        <hr />
-        <ItemList list={shoppingList} />
+    <section className="section">
+      <header>
+        <img src={logo} alt="logo" />
       </header>
-    </div>
+      
+      <Total total={total} />
+      <hr />
+      <AddItem list={shoppingList} setList={setShoppingList} />
+      <hr />
+      <ItemList list={shoppingList} />
+    </section>
   );
 }
 
