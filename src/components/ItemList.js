@@ -1,30 +1,29 @@
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1)
 }
 
 function ItemList({ list }) {
-  const itemToHtml = item => <Item item={item} key={item.name} />
-  const htmlList = list.map(itemToHtml)
+  const htmlList = list.map(row)
 
   if(list.length === 0) return null
 
   return (
-    <Card>
-      <ListGroup variant="flush">
-        { htmlList }
-      </ListGroup>
-    </Card>)
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+      <tbody>
+        {htmlList}      
+      </tbody>
+    </table>
+  )
+
 }
 
-function Item({ item }) {
-  return (
-    <ListGroup.Item>
-      <span>{ capitalize(item.name) } </span>
-      <span>{item.price}€</span>
-    </ListGroup.Item>
+function row (item){
+  return(
+    <tr>
+      <td>{ capitalize(item.name) }</td>
+      <td>{item.price + " €"}</td>
+    </tr>
   )
 }
 

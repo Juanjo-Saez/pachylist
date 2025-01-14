@@ -20,9 +20,7 @@ function App() {
       </header>
       
       <Total total={total} />
-      <hr />
       <AddItem list={shoppingList} setList={setShoppingList} />
-      <hr />
       <ItemList list={shoppingList} />
     </section>
   );
